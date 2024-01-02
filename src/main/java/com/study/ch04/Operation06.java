@@ -14,6 +14,7 @@ public class Operation06 {
         int iResult = 10 > 2 ? 1111 : 2222;
         String sResult = 10 > 2 ? "1111" : "2222";
 
+        System.out.println("=======");
 
     }
 
