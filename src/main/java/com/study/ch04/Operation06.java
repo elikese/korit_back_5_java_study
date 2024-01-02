@@ -15,6 +15,8 @@ public class Operation06 {
         String sResult = 10 > 2 ? "1111" : "2222";
 
         System.out.println("=======");
+        System.out.println("테스트 코드 작성");
+
 
     }
 
