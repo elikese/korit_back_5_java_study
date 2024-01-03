@@ -16,14 +16,4 @@ public class Function01 {
     static void fx2(String name) {
         System.out.println("이름은 " + name + " 입니다.");
     }
-
-    static void fx3(int arr[]) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] > arr[j]) {
-                    int tmp = arr[i];
-                }
-            }
-        }
-    }
 }
