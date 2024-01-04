@@ -33,6 +33,5 @@ public class ProductMain {
         Product product = new Product(productName, productCode, productPrice);
 
         productService.registerProductService(product);
-
     }
 }
