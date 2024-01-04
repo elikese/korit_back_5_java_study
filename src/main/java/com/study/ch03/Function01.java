@@ -17,6 +17,9 @@ public class Function01 {
     static void fx2(String name) {
         System.out.println("이름은 " + name + " 입니다.");
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 61718606a39f6d8d3f22dfa74454820f4b91f8d8
 }
