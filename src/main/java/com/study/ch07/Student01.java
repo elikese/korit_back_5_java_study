@@ -8,7 +8,7 @@ public class Student01 {
     // 생성자 (constructor)
     // 매개변수의 값은 args (arguments)라고 함
 
-    //NoArgsConstructor (가지고 오는 값이 없음)
+    // NoArgsConstructor (가지고 오는 값이 없음)
 //    Student01() {
 //
 //    }
