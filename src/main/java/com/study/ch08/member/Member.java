@@ -6,7 +6,7 @@ public class Member {
     int age;
     String address;
 
-    // 멤머 allArgsConstructor 정의
+    // 멤버 allArgsConstructor 정의
     Member(String code, String name, int age, String address) {
         this.code = code;
         this.name = name;
