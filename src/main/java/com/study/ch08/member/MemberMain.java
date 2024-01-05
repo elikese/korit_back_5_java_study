@@ -15,6 +15,7 @@ public class MemberMain {
             System.out.println("[]  학원 관리 프로그램  []");
             System.out.println("1. 회원 등록");
             System.out.println("2. 전체 회원 조회");
+            System.out.println("3. 회원 조회");
             System.out.println("q. 프로그램 종료하기");
 
             System.out.print("메뉴 선택 >>> ");
@@ -51,6 +52,9 @@ public class MemberMain {
                     }
                     System.out.println(memberRepository.memberArray[i].toString());
                 }
+            } else if ("3".equals(selectedMenu)) {
+                System.out.println("<<< 회원 검색 >>>");
+                System.out.println(memberService.searchMember());
 
             } else if ("q".equalsIgnoreCase(selectedMenu)) {
                 break;

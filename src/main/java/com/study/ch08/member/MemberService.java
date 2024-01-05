@@ -54,4 +54,15 @@ public class MemberService {
 
         return memberRepository.insert(member) > 0; // insert가 된다면 리턴이 ture
     }
+
+    String searchMember() {
+        String targetName = null;
+        targetName = inputValue("검색할 이름");
+        for (int i = 0; i < memberRepository.memberArray.length; i++) {
+            if (targetName.equals(memberRepository.memberArray[i].name)) {
+                return targetName + "회원님의 정보 : " + memberRepository.memberArray[i].toString();
+            }
+        }
+        return targetName + "으로 검색된 결과 없음";
+    }
 }
