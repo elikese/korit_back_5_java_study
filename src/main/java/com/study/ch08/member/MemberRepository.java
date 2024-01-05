@@ -2,8 +2,9 @@ package com.study.ch08.member;
 
 public class MemberRepository {
 
-    int insert(Member[] memberArray, Member member) {
+    Member[] memberArray = new Member[3];
 
+    int insert(Member member) {
         for (int i = 0; i < memberArray.length; i++) {
             if (memberArray[i] == null) {
                 memberArray[i] = member;

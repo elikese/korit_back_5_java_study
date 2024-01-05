@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class MemberMain {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        MemberService memberService = new MemberService();
-        Member[] memberArray = new Member[3];
+        MemberRepository memberRepository = new MemberRepository();
+        MemberService memberService = new MemberService(memberRepository);
+
 
         String selectedMenu = null;
 
@@ -21,8 +22,8 @@ public class MemberMain {
 
             if ("1".equals(selectedMenu)) {
                 int emptyCount = 0;
-                for (int i = 0; i < memberArray.length; i++) {
-                    if (memberArray[i] == null) {
+                for (int i = 0; i < memberRepository.memberArray.length; i++) {
+                    if (memberRepository.memberArray[i] == null) {
                         emptyCount++;
                     }
                 }
@@ -31,7 +32,7 @@ public class MemberMain {
                     continue;
                 }
 
-                boolean responseData = memberService.addMember(memberArray);
+                boolean responseData = memberService.addMember();
 
 
                 if (responseData) {
@@ -43,12 +44,12 @@ public class MemberMain {
 
             } else if ("2".equals(selectedMenu)) {
                 System.out.println("<<< 회원 전체 조회 >>>");
-                for (int i = 0; i < memberArray.length; i++) {
-                    if (memberArray[i] == null) {
+                for (int i = 0; i < memberRepository.memberArray.length; i++) {
+                    if (memberRepository.memberArray[i] == null) {
                         System.out.println("NULL");
                         continue;
                     }
-                    System.out.println(memberArray[i].toString());
+                    System.out.println(memberRepository.memberArray[i].toString());
                 }
 
             } else if ("q".equalsIgnoreCase(selectedMenu)) {

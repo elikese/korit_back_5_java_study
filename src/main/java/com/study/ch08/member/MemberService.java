@@ -3,11 +3,15 @@ package com.study.ch08.member;
 import java.util.Scanner;
 
 public class MemberService {
-    MemberRepository memberRepository = new MemberRepository();
+
+    MemberRepository memberRepository;
+
+    MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     String inputValue(String label) {
         Scanner scanner = new Scanner(System.in);
-        String value = null;
 
         while (true) {
             System.out.print(label + "(입력취소 : exit) >>> ");
@@ -19,7 +23,7 @@ public class MemberService {
         return label;
     }
 
-    boolean addMember(Member[] memberArray) {
+    boolean addMember() {
         String name = null;
         String code = null;
         String age = null;
@@ -48,7 +52,6 @@ public class MemberService {
 
         Member member = new Member(code, name, Integer.parseInt(age), address);
 
-
-        return memberRepository.insert(memberArray, member) > 0; // insert가 된다면 리턴이 ture
+        return memberRepository.insert(member) > 0; // insert가 된다면 리턴이 ture
     }
 }
