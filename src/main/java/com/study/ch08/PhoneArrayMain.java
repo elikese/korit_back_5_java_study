@@ -10,5 +10,6 @@ public class PhoneArrayMain {
         for (int i = 0; i < phones.length; i++) {
             System.out.println(phones[i].toString());
         }
+        Phone[] p = new Phone[1];
     }
 }

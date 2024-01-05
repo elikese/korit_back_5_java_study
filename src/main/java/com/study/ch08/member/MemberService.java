@@ -3,6 +3,7 @@ package com.study.ch08.member;
 import java.util.Scanner;
 
 public class MemberService {
+    MemberRepository memberRepository = new MemberRepository();
 
     String inputValue(String label) {
         Scanner scanner = new Scanner(System.in);
@@ -18,7 +19,7 @@ public class MemberService {
         return label;
     }
 
-    boolean addMember() {
+    boolean addMember(Member[] memberArray) {
         String name = null;
         String code = null;
         String age = null;
@@ -47,8 +48,7 @@ public class MemberService {
 
         Member member = new Member(code, name, Integer.parseInt(age), address);
 
-        MemberRepository memberRepository = new MemberRepository();
 
-        return memberRepository.insert(member) > 0; // insert가 된다면 리턴이 ture
+        return memberRepository.insert(memberArray, member) > 0; // insert가 된다면 리턴이 ture
     }
 }

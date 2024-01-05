@@ -6,25 +6,54 @@ public class MemberMain {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         MemberService memberService = new MemberService();
+        Member[] memberArray = new Member[3];
+
         String selectedMenu = null;
 
         while (true) {
             System.out.println("[]  학원 관리 프로그램  []");
             System.out.println("1. 회원 등록");
+            System.out.println("2. 전체 회원 조회");
             System.out.println("q. 프로그램 종료하기");
 
             System.out.print("메뉴 선택 >>> ");
             selectedMenu = scanner.nextLine();
 
-            if ("1".equals(selectedMenu)) { // switch 문법은 case 안에 조건연산자 사용 불가 -> case 두개 작성 -> 코드엉망 -> if문 선호
-                boolean responseData = memberService.addMember();
+            if ("1".equals(selectedMenu)) {
+                int emptyCount = 0;
+                for (int i = 0; i < memberArray.length; i++) {
+                    if (memberArray[i] == null) {
+                        emptyCount++;
+                    }
+                }
+                if (emptyCount == 0) {
+                    System.out.println("더 이상 회원을 등록할 수 없습니다");
+                    continue;
+                }
+
+                boolean responseData = memberService.addMember(memberArray);
+
+
                 if (responseData) {
                     System.out.println("<<< 회원 등록 완료 >>>");
                 } else {
                     System.out.println("<<< 회원 등록 취소 >>>");
                 }
+
+
+            } else if ("2".equals(selectedMenu)) {
+                System.out.println("<<< 회원 전체 조회 >>>");
+                for (int i = 0; i < memberArray.length; i++) {
+                    if (memberArray[i] == null) {
+                        System.out.println("NULL");
+                        continue;
+                    }
+                    System.out.println(memberArray[i].toString());
+                }
+
             } else if ("q".equalsIgnoreCase(selectedMenu)) {
                 break;
+
             } else {
                 System.out.println("다시 선택하세요");
             }
