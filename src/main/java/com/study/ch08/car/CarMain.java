@@ -10,6 +10,8 @@ public class CarMain {
         boolean loopFlag = true;
 
         Car[] cars = new Car[3];
+        CarRepository carRepository = new CarRepository(cars);
+        CarService carService = new CarService(carRepository);
 
         while (loopFlag) {
             System.out.println("자동차 관리 프로그램");
@@ -24,27 +26,33 @@ public class CarMain {
                 loopFlag = false;
             } else if ("1".equals(selectedMenu)) {
                 System.out.println("<<< 자동차 등록 페이지 >>>");
+
                 String model = null;
                 String color = null;
+
+                if (carService.isEmpty()) {
+                    System.out.println("더이상 등록할 수 없습니다");
+                    continue;
+                }
 
                 System.out.println("모델명 >>>");
                 model = scanner.nextLine();
                 System.out.println("색상 >>>");
                 color = scanner.nextLine();
 
-                Car car = new Car(model, color);
-                for (int i = 0; i < cars.length; i++) {
-                    if (cars[i] == null) {
-                        cars[i] = car;
-                        break;
-                    }
-                }
-                System.out.println(cars[0]);
+                Car car = new Car(model, color); // entity
 
 
             } else if ("2".equals(selectedMenu)) {
                 System.out.println("<<< 자동차 조회 페이지 >>>");
-                System.out.println(cars[0].toString());
+                for (int i = 0; i < cars.length; i++) {
+                    System.out.print("[" + i + "] > ");
+                    if (cars[i] == null) {
+                        System.out.println("빈 자리");
+                        continue;
+                    }
+                    System.out.println(cars[i].toString());
+                }
 
             } else {
                 System.out.println("다시 입력하세요");
@@ -52,6 +60,5 @@ public class CarMain {
 
         }
         System.out.println("프로그램 종료되었습니다");
-
-    }
+    } // 메인메서드
 }

@@ -6,7 +6,6 @@ public class Car {
 
     //NoArgsConstructor
     Car() {
-
     }
 
     //AllArgsConstructor
