@@ -34,8 +34,6 @@ public class MemberMain {
                 }
 
                 boolean responseData = memberService.addMember();
-
-
                 if (responseData) {
                     System.out.println("<<< 회원 등록 완료 >>>");
                 } else {
