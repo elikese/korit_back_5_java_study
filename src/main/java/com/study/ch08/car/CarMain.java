@@ -30,7 +30,7 @@ public class CarMain {
                 String model = null;
                 String color = null;
 
-                if (carService.isEmpty()) {
+                if (carService.isFull()) {
                     System.out.println("더이상 등록할 수 없습니다");
                     continue;
                 }
@@ -41,18 +41,11 @@ public class CarMain {
                 color = scanner.nextLine();
 
                 Car car = new Car(model, color); // entity
-
+                carService.append(car);
 
             } else if ("2".equals(selectedMenu)) {
                 System.out.println("<<< 자동차 조회 페이지 >>>");
-                for (int i = 0; i < cars.length; i++) {
-                    System.out.print("[" + i + "] > ");
-                    if (cars[i] == null) {
-                        System.out.println("빈 자리");
-                        continue;
-                    }
-                    System.out.println(cars[i].toString());
-                }
+                carService.printCarList();
 
             } else {
                 System.out.println("다시 입력하세요");
