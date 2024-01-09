@@ -8,7 +8,7 @@ public class Computer extends ElectronicDevice {
         System.out.println("PC 게임을 합니다");
     }
 
-    void showDeviceState() { // super를 활용한 재정의
+    void showDeviceState() { // super를 활용한 재정의(실행문에 한해서)
         System.out.print("컴퓨터 ");
         super.showDeviceState();
     }
