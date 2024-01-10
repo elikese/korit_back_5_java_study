@@ -14,5 +14,4 @@ public class Exercise {
         return instance;
     }
 
-
 }
