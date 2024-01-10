@@ -7,6 +7,7 @@ public class ElectronicDeviceMain {
         // ElectronicDevice electronicDevice = new ElectronicDevice(); (불가능)
 
         // 익명클래스로 추상클래스 구현(추상 메소드를 재정의) // 재사용안하는 일회용(임시)클래스
+
         ElectronicDevice electronicDevice = new ElectronicDevice() {
             @Override
             void showDeviceState() {
