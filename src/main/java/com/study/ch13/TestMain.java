@@ -8,5 +8,6 @@ public class TestMain {
 
         a.a(company);
         a2.a2(company);
+        
     }
 }
