@@ -12,11 +12,10 @@ public class SendMain {
     }
 
     // 매개변수에 제네릭을 넣을때 제네릭의 타입을 모를 때 <?> 사용 : 와일드카드
-    // <? extends 어쩌고>로 어쩌고를 당 개체 및 상속받은 클래스까지의 제한을 가질 수 있다
-    // <? super 어쩌고>로 어쩌고 당 개체 및 상속을 준 클래스까지의 제한을 가질 수 있다
+    // <? extends 어쩌고>로 어쩌고 개체 및 어쩌고에게 상속받은 클래스까지의 제한을 가질 수 있다
+    // <? super 어쩌고>로 어쩌고 개체 및 어쩌고의 상위 클래스까지의 제한을 가질 수 있다
     public static void send(SendData<? super VipMember> sendData) {
         sendData.send();
     }
-
 
 }
