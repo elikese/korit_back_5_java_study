@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class HashMapMain {
 
     public static void main(String[] args) {
-        HashMap<String, String > map = new HashMap<>();
+        HashMap<String, String> map = new HashMap<>();
 
         map.put("1번학생", "이동윤"); // map은 순서가 없음
         map.put("2번학생", "삼동윤");
