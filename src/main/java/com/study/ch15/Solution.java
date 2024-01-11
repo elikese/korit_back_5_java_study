@@ -25,7 +25,7 @@ class Solution {
         for (int i = 0; i < diceArray.length; i++) {
             for (int j = 1; j < diceArray.length ; j++) {
                 if (diceArray[i] == diceArray[j]) {
-                    count ++;
+
                 }
             }
             countArray[i] = count;

@@ -13,5 +13,6 @@ public class ArrayMain {
         arrayService.remove(0);
         System.out.println(arrayService);
         System.out.println(arrayService.get(0));
+
     }
 }
