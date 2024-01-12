@@ -18,6 +18,9 @@ public class Car {
         return instance;
     }
 
+    public String getInfo() {
+        return "name: " + getName() + " model: " + getModel();
+    }
     public String getName() {
         return name;
     }

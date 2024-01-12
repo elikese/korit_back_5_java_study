@@ -2,11 +2,10 @@ package com.study.exercise.singletone;
 
 public class CarMain {
     public static void main(String[] args) {
-        Car.getInstance().setModel("중국산");
-        Car.getInstance().setName("쓰레기");
+        Car.getInstance().setModel("BMW X5");
+        Car.getInstance().setName("남의차");
 
-        Car.getInstance().getModel();
-        Car.getInstance().getName();
+        System.out.println(Car.getInstance().getInfo());
     }
 
 
