@@ -46,7 +46,6 @@ public class HashSetMain {
                 findName = name;
                 break;
             }
-
         }
 
         System.out.println(findName);
