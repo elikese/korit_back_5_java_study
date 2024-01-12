@@ -19,12 +19,12 @@ public class Car {
         this.color = color;
     }
 
-    // 빌더 메소드 생성
+    // 빌더 메소드 생성(스태틱으로 접근)
     public static CarBuilder builder() {
         return new CarBuilder();
     }
 
-    // 카빌더 클래스 생성(내부 클래스)
+    // 카빌더 클래스 생성(내부 클래스) - 스태틱 메소드로 전달받아 접근 따라서 스태틱
     public static class CarBuilder{
         private String color;
         private String model;
@@ -40,7 +40,7 @@ public class Car {
         }
 
         public Car build() {
-            return new Car(model, color);
+            return new Car(color, model);
         }
     }
 }
