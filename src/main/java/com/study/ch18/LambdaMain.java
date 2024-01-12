@@ -49,7 +49,6 @@ public class LambdaMain {
 
         //구성 :(람다식으로 변환 인터페이스 + 객체이름 = 메서드 재정의)
         Function<Integer, String> fx1 = num -> Integer.toString(num * num);
-        Function<Integer, Integer> fx2 = num -> num*2;
 
         System.out.println(fx1.apply(10));
 
@@ -58,13 +57,8 @@ public class LambdaMain {
             return "문자열" + num;
         }).apply(10);
 
-        String result3 = fx1.andThen(a -> {
-            System.out.println("fx1작동 다음 실행");
-            return a;
-        }).apply(100);
 
         System.out.println(result2);
-        System.out.println(result3);
         //Predicate -> ArrayList에서 조건에 맞는 자료들에 대해 true인것들을 보여주는 필터역할을 함
         Predicate<Integer> filterFx = num -> num % 2 == 0;
 
