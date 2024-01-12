@@ -9,13 +9,5 @@ public class CustomerMain {
         List<Customer> customerList = new ArrayList<>();
 
 
-        Customer customer = Customer.builder()
-                .chatNum(20240000+i)
-                .name("i번손님")
-                .phone("0101234567" + i)
-                .build();
-
-
-
     }
 }
